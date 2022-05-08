@@ -1,0 +1,18 @@
+[
+    {
+        "id":1,
+        "activityName": "Training"
+    },
+    {
+        "id":2,
+        "activityName": "Support"
+    },
+    {
+        "id":3,
+        "activityName": "Development"
+    },
+    {
+        "id":4,
+        "activityName": "QA"
+    }
+]

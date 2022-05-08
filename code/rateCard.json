@@ -1,0 +1,18 @@
+[
+    {
+        "id":1,
+        "rate":20,
+        "currency":"$"
+    },
+    {
+        "id":2,
+        "rate":25,
+        "currency":"$"
+    },
+    {
+        "id":3,
+        "rate":15,
+        "currency":"$"
+    }
+
+]

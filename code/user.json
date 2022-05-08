@@ -1,0 +1,23 @@
+[
+    {
+        "id":1,
+        "name":"Prem Bhajaj",
+        "email":"prem.bhajaj@lntinfotech.com",
+        "password":"prembhajaj",
+        "roleId":1
+    },
+    {
+        "id":2,
+        "name":"AshishKumar Singh",
+        "email":"ashishkumar1.singh@lntinfotech.com",
+        "password":"ashishkumar",
+        "roleId":2
+    },
+    {
+        "id":3,
+        "name":"Ajay Mohad",
+        "email":"ajay.mohad@lntinfotech.com",
+        "password":"ajaymohad",
+        "roleId":3
+    }
+]

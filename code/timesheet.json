@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "userResourceId": 1,
+        "date": "21-04-2022",
+        "activityId": 1,
+        "subActivity": "Completed a course",
+        "status": "submitted"
+    },
+    {
+        "id": 2,
+        "userResourceId": 1,
+        "date": "21-04-2022",
+        "activityId": 2,
+        "subActivity": "Completed a course",
+        "status": "submitted"
+    }
+]
