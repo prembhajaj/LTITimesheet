@@ -1,19 +1,18 @@
 import React, { useState } from 'react'
 
-export default function Modal({entries,setEntries}) {
+export default function Modal({addEntry}) {
   const [entry,setEntry] = useState({
+    "Name":"Prem Bhajaj",
     "Project":"Hoist Finance",
     "Activity":"Training",
     "Date":"2022-05-08",
     "StartTime":"09:00",
     "EndTime":"18:00",
     "Duration":"09:00",
-    "SubActivity":"Completed Cloud Computing Certification"
+    "SubActivity":"Completed Cloud Computing Certification",
+    "status":"submitted"
   })
-  function onSubmit() {
-    setEntries([...entries,entry])
-    // console.log(entries)
-  }
+
   return (
     <>
     <div id="addtask" className="modal fade" role="dialog">
@@ -91,7 +90,7 @@ export default function Modal({entries,setEntries}) {
                     </div>
                         <div className="col-md-9">
                             <div clas="actionbutton">
-                                <p className="button-container"><button className="user-aciton" onClick={onSubmit}>Add Task</button></p>
+                                <p className="button-container"><button className="user-aciton" onClick={() => addEntry(entry)}>Add Task</button></p>
                             </div>  
                         </div>
 
