@@ -7,17 +7,19 @@ section {
 @media screen and (max-width: 991px) {
   section {
     padding-left: 0px;
+  
   }
 }
 
 body {
-  background-image: url("https://static.pexels.com/photos/173434/pexels-photo-173434.jpeg");
+  /* background-image: url("https://static.pexels.com/photos/173434/pexels-photo-173434.jpeg"); */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 40%, rgba(255, 255, 255, 0.85) 100%), url("https://static.pexels.com/photos/173434/pexels-photo-173434.jpeg");
   background-repeat: no-repeat;
+  overflow-x:hidden;
 }
 
 p {
@@ -25,7 +27,8 @@ p {
 }
 
 .maintitle {
-  padding: 20px 0 0px 0%;
+  padding-top: 20px;
+  /* padding: 20px 0 0px 0%; */
   margin-bottom: 50px;
   text-align: center;
   font-size: 40px;
@@ -116,7 +119,7 @@ p {
 }
 
 .picked-day {
-  font-size: 24px;
+  font-size: 20px;
   color: #1c7f7d;
 }
 
@@ -227,8 +230,10 @@ p {
 
 .nav-tabs {
   background-color: white;
-  border: none;
+  border-top: none;
   width: 100%;
+  
+
   
   
 }
@@ -236,6 +241,9 @@ p {
 .nav-tabs > li {
   width: 150px;
   text-align: center;
+  width: 33%;
+
+  
   
 }
 @media screen and (max-width: 860px) {
@@ -247,6 +255,7 @@ p {
 @media screen and (max-width: 650px) {
   .nav-tabs > li {
     font-size: 90px !important;
+    
   }
 }
 
@@ -257,6 +266,7 @@ p {
   height: 60px;
   line-height: 40px;
   white-space: nowrap;
+
 }
 @media screen and (max-width: 860px) {
   .nav-tabs > li > a {
@@ -298,6 +308,7 @@ p {
   background-color: #1AAEAB;
   color: white;
   font-weight: 100;
+
 }
 @media screen and (max-width: 600px) {
   .tab-title {

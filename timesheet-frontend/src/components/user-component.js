@@ -31,11 +31,11 @@ export default function UserComponent({showTab,entries,setEntries}) {
   }
   return (
     <>
-        < TimesheetButtons />
+        <TimesheetButtons />
         <TableHeaderUser />
         {entries.map((entry,index) => {
           if (showTab == entry.status)
-          return <TableContentsUser deleteEntry={deleteEntry} entry={entry} id={index} />
+          return <TableContentsUser showTab={showTab} deleteEntry={deleteEntry} entry={entry} id={index} />
         })}
 
         

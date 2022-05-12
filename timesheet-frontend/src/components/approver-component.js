@@ -2,6 +2,7 @@ import React from 'react'
 import TableHeaderApprover from './table-header-approver'
 import TableContentsApprover from './table-contents-approver'
 import axios from 'axios'
+import TimesheetButtons from './timesheet-buttons'
 
 export default function ApproverComponent({showTab,entries,setEntries}) {
   async function approveEntry(id) {
@@ -32,12 +33,12 @@ export default function ApproverComponent({showTab,entries,setEntries}) {
   }
   return (
     <>
-        <br></br>
+        < TimesheetButtons role="approver"/>
         <TableHeaderApprover />
 
         {entries.map((entry,index) => {
           if (showTab == entry.status){
-            return <TableContentsApprover entry={entry} id={index} approveEntry={approveEntry} rejectEntry={rejectEntry} />
+            return <TableContentsApprover showTab={showTab} entry={entry} id={index} approveEntry={approveEntry} rejectEntry={rejectEntry} />
         }
 })}
 

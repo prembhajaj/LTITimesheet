@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function TableContentsApprover({entry,id,approveEntry,rejectEntry}) {
+export default function TableContentsApprover({showTab,entry,id,approveEntry,rejectEntry}) {
     return (
         <section>
             <div className="container-fluid">
@@ -28,11 +28,12 @@ export default function TableContentsApprover({entry,id,approveEntry,rejectEntry
                     <div className="col-md-2 col-sm-2 col-xs-2">
                     <div className="detailstitle">{entry.SubActivity}</div>
                     </div>
+                    {showTab =="submitted" &&
                     <div className="col-md-2 col-sm-1 col-xs-1">
-                    <button className="newmsgb btn" onClick={() => approveEntry(id)}>Approve</button>
-                    <button className="add-task-timesheet" onClick={() => rejectEntry(id)}>Reject</button>
-
+                        <button className="newmsgb btn" onClick={() => approveEntry(id)}>Approve</button>
+                        <button className="add-task-timesheet" onClick={() => rejectEntry(id)}>Reject</button>
                     </div>
+                    }
                 </div>
                 </div>
             </div>

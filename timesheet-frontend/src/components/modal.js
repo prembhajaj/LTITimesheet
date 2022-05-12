@@ -36,6 +36,8 @@ export default function Modal({addEntry}) {
                                 <div className="col-md-9">
                                     <select className="js-example-basic-single" onChange={(e) => setEntry({...entry,Project:e.target.value})}>
                                       <option selected>Hoist Finance</option>
+                                      <option>Citi Group</option>
+                                      <option>HSBC Bank</option>
                                       
                                     </select>
                                 </div>
