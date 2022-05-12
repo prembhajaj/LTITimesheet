@@ -4,7 +4,7 @@ import TableContentsApprover from './table-contents-approver'
 import axios from 'axios'
 import TimesheetButtons from './timesheet-buttons'
 
-export default function ApproverComponent({showTab,entries,setEntries}) {
+export default function ApproverComponent({showTab,entries,setEntries,selectedDate,setSelectedDate}) {
   async function approveEntry(id) {
     setEntries( entries.map((entry,index) => {
 
@@ -33,12 +33,13 @@ export default function ApproverComponent({showTab,entries,setEntries}) {
   }
   return (
     <>
-        < TimesheetButtons role="approver"/>
+        < TimesheetButtons role="approver" selectedDate={selectedDate} setSelectedDate={setSelectedDate}/>
         <TableHeaderApprover />
 
         {entries.map((entry,index) => {
           if (showTab == entry.status){
-            return <TableContentsApprover showTab={showTab} entry={entry} id={index} approveEntry={approveEntry} rejectEntry={rejectEntry} />
+            if (!selectedDate || selectedDate==entry.Date)
+              return <TableContentsApprover showTab={showTab} entry={entry} id={index} approveEntry={approveEntry} rejectEntry={rejectEntry} />
         }
 })}
 

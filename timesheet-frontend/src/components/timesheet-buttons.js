@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 
-export default function TimesheetButtons({role}) {
-  const[selectedDate,setSelectedDate] = useState()
+export default function TimesheetButtons({role,selectedDate,setSelectedDate}) {
+
   return (
     <>
         <section className="timesheet-buttons">
             <input type="date" id="theDate" onChange={(e) =>setSelectedDate(e.target.value)}/>
             
             <div className="today-timesheet">
-                <button type="button" className="newmsgb">Today</button>
+                <button type="button" className="newmsgb" onClick={() => setSelectedDate()}>All Dates</button>
                 {role!="approver" && <button type="button" className="add-task-timesheet" data-toggle="modal" data-target="#addtask">Add New Task</button>}         </div>
         </section>
 

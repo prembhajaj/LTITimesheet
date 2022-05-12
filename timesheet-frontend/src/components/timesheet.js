@@ -7,6 +7,7 @@ import UserComponent from './user-component'
 import ApproverComponent from './approver-component'
 import { useEffect } from 'react';
 import axios from 'axios';
+import Login from './login';
 
 export default function Timesheet() {
 
@@ -23,6 +24,8 @@ export default function Timesheet() {
   }])
 
   const [showTab,setShowTab] = useState("submitted")
+  const[selectedDate,setSelectedDate] = useState()
+
 
   useEffect(() => {
     // Update the document title using the browser API
@@ -38,12 +41,12 @@ export default function Timesheet() {
     <>
     <Title />
 
-    <Navbar setShowTab={setShowTab} />
+    {window.location.pathname!="/" && <Navbar setShowTab={setShowTab} />}
 
     <Routes>
-      <Route exact path='/' element={<Navigate to="/user" />}></Route>
-      <Route exact path='/user' element={<UserComponent showTab={showTab} entries={entries} setEntries={setEntries} />}></Route>
-      <Route exact path='/approver' element={<ApproverComponent showTab={showTab} entries={entries} setEntries={setEntries}/>}></Route>
+      <Route exact path='/' element={<Login />}></Route>
+      <Route exact path='/user' element={<UserComponent selectedDate={selectedDate} setSelectedDate={setSelectedDate} showTab={showTab} entries={entries} setEntries={setEntries} />}></Route>
+      <Route exact path='/approver' element={<ApproverComponent selectedDate={selectedDate} setSelectedDate={setSelectedDate} showTab={showTab} entries={entries} setEntries={setEntries}/>}></Route>
       
     </Routes>
 

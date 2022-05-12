@@ -44,6 +44,17 @@ def rejectEntry(id):
     entries[int(id)]["status"] = "rejected"
     return {"entries": entries}
 
+@app.route('/signin',methods=['POST'])
+def signin():
+    cred = request.get_json()
+    print(cred)
+    if cred["username"] == "prem.bhajaj@lntinfotech.com" and cred["password"]=="password@123":
+        return {"role": "user"}
+    elif cred["username"] == "ajay.mohad@lntinfotech.com" and cred["password"]=="password@123":
+        return {"role": "approver"}
+    else:
+        return {"role":"unauthorized"}
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")

@@ -5,7 +5,7 @@ import TableContentsUser from './table-contents-user'
 import Modal from './modal'
 import axios from 'axios'
 
-export default function UserComponent({showTab,entries,setEntries}) {
+export default function UserComponent({showTab,entries,setEntries,selectedDate,setSelectedDate}) {
   async function deleteEntry(id) {
     setEntries(entries.filter((value, index)=> index != id))
     const res = await axios.delete(`http://127.0.0.1:5000/deleteentry/${id}`,{
@@ -31,11 +31,14 @@ export default function UserComponent({showTab,entries,setEntries}) {
   }
   return (
     <>
-        <TimesheetButtons />
+        <TimesheetButtons selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
         <TableHeaderUser />
         {entries.map((entry,index) => {
-          if (showTab == entry.status)
-          return <TableContentsUser showTab={showTab} deleteEntry={deleteEntry} entry={entry} id={index} />
+          if (showTab == entry.status){
+            if (!selectedDate || selectedDate==entry.Date)
+              return <TableContentsUser showTab={showTab} deleteEntry={deleteEntry} entry={entry} id={index} />
+      
+            }
         })}
 
         

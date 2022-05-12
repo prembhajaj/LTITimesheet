@@ -315,3 +315,46 @@ p {
     display: none;
   }
 }
+
+
+
+.login-field {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.login-input {
+  /* border: 1px solid #1AAEAB; */
+  /* height: 30px !important; */
+  /* margin: 1%; */
+  width:30%;
+  margin: auto;
+  font-size: 15px;
+  border: solid 1px #1c7f7d;
+  background-color: transparent;
+  color: #1c7f7d;
+  border-radius: 5px;
+  padding: 7px 15px 7px 15px;
+  white-space: nowrap;
+  margin-top: 1%;
+  margin-bottom: 1%;
+
+}
+
+/* .login-input:hover {
+  background-color: #1c7f7d;
+  color: white;
+} */
+.login-input:focus {
+  /* outline: wheat !important; */
+  border: 1.5px #1c7f7d;
+  border-style:solid;
+}
+
+
+.login-label {
+  font-size: 20px;
+  color: #1c7f7d;
+  margin-top: 2%;
+}
