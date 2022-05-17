@@ -10,7 +10,7 @@ export default function Login() {
     const [role,setRole] = useState("")
 
     async function signin(e) {
-        // e.preventDefault()
+        e.preventDefault()
         const json = JSON.stringify({"username":username,"password":password});
         const res = await axios.post('http://127.0.0.1:5000/signin', json, {
           headers: {
@@ -20,10 +20,10 @@ export default function Login() {
         setRole(res.data.role)
 
         if(res.data.role == "approver"){
-            window.location.replace('/approver');
+            window.location.replace('/approver?user='+res.data.name);
         }
         else if(res.data.role == "user"){
-            window.location.replace('/user');
+            window.location.replace('/user?user='+res.data.name);
         }
 
         

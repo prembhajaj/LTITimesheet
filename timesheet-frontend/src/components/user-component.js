@@ -4,8 +4,11 @@ import TableHeaderUser from './table-header-user'
 import TableContentsUser from './table-contents-user'
 import Modal from './modal'
 import axios from 'axios'
+import { useSearchParams } from 'react-router-dom';
 
 export default function UserComponent({showTab,entries,setEntries,selectedDate,setSelectedDate}) {
+  const [searchParams, setSearchParams] = useSearchParams();
+  
   async function deleteEntry(id) {
     setEntries(entries.filter((value, index)=> index != id))
     const res = await axios.delete(`http://127.0.0.1:5000/deleteentry/${id}`,{
@@ -16,6 +19,7 @@ export default function UserComponent({showTab,entries,setEntries,selectedDate,s
 
   }  
   async function addEntry(entry) {
+    entry["Name"] = searchParams.get("user") || "Prem Bhajaj"
     setEntries([...entries,entry])
     //  await axios.post('http://127.0.0.1:5000/addentry', entry);
     const json = JSON.stringify(entry);
@@ -34,7 +38,7 @@ export default function UserComponent({showTab,entries,setEntries,selectedDate,s
         <TimesheetButtons selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
         <TableHeaderUser />
         {entries.map((entry,index) => {
-          if (showTab == entry.status){
+          if (showTab == entry.status && entry.Name == (searchParams.get("user") || "Prem Bhajaj")){
             if (!selectedDate || selectedDate==entry.Date)
               return <TableContentsUser showTab={showTab} deleteEntry={deleteEntry} entry={entry} id={index} />
       

@@ -9,7 +9,9 @@ export default function TimesheetButtons({role,selectedDate,setSelectedDate}) {
             
             <div className="today-timesheet">
                 <button type="button" className="newmsgb" onClick={() => setSelectedDate()}>All Dates</button>
-                {role!="approver" && <button type="button" className="add-task-timesheet" data-toggle="modal" data-target="#addtask">Add New Task</button>}         </div>
+                {role!="approver" && <button type="button" className="add-task-timesheet" data-toggle="modal" data-target="#addtask">Add New Task</button>}  
+                <a href="/?" className=" logout"><i class="fa fa-sign-out"></i> Log Out</a>    
+            </div>
         </section>
 
         <section style={{marginTop: "-40px"}}>

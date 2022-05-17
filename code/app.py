@@ -49,9 +49,11 @@ def signin():
     cred = request.get_json()
     print(cred)
     if cred["username"] == "prem.bhajaj@lntinfotech.com" and cred["password"]=="password@123":
-        return {"role": "user"}
+        return {"role": "user","name":"Prem Bhajaj"}
+    elif cred["username"] == "ashishkumar.singh@lntinfotech.com" and cred["password"]=="password@123":
+        return {"role": "user","name":"AshishKumar Singh"}
     elif cred["username"] == "ajay.mohad@lntinfotech.com" and cred["password"]=="password@123":
-        return {"role": "approver"}
+        return {"role": "approver","name":"Ajay Mohad"}
     else:
         return {"role":"unauthorized"}
 

@@ -358,3 +358,20 @@ p {
   color: #1c7f7d;
   margin-top: 2%;
 }
+
+.logout {
+  border-radius: 5px;
+  padding: 7px 15px 7px 15px;
+  /* white-space: nowrap; */
+  background-color: #DD8F5B;
+  border: none;
+  margin-right: 200px;
+  float: right !important;
+  color: white;
+}
+
+.logout:hover {
+  background-color: #E15959;
+  color: white;
+  text-decoration:none;
+}
