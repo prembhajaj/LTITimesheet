@@ -4,10 +4,9 @@ export default function Modal({addEntry}) {
   const [entry,setEntry] = useState({
     "Name":"Prem Bhajaj",
     "Project":"Hoist Finance",
+    "CostCode":"1001",
     "Activity":"Training",
     "Date":"2022-05-08",
-    "StartTime":"09:00",
-    "EndTime":"18:00",
     "Duration":"09:00",
     "SubActivity":"Completed Cloud Computing Certification",
     "status":"submitted"
@@ -65,18 +64,10 @@ export default function Modal({addEntry}) {
               </div>
               <div className="row">
                 <div className="col-md-3">
-                  <p>Start Time</p>
+                  <p>Duration</p>
                 </div>
                 <div className="col-md-9">
-                  <input type="time" onChange={(e) => setEntry({...entry,StartTime:e.target.value})}/>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-md-3">
-                  <p>End Time</p>
-                </div>
-                <div className="col-md-9">
-                  <input type="time" onChange={(e) => setEntry({...entry,EndTime:e.target.value})} />
+                  <input type="time" value="09:00" onChange={(e) => setEntry({...entry,Duration:e.target.value})}/>
                 </div>
               </div>
               <div className="row">

@@ -20,6 +20,21 @@ export default function UserComponent({showTab,entries,setEntries,selectedDate,s
   }  
   async function addEntry(entry) {
     entry["Name"] = searchParams.get("user") || "Prem Bhajaj"
+    switch (entry["Project"]) {
+      case "Hoist Finance":
+        entry["CostCode"] = "1001"
+        break;
+      case "Citi Group":
+        entry["CostCode"] = "1002"
+        break;
+      case "HSBC Bank":
+        entry["CostCode"] = "1003"
+        break;
+    
+      default:
+        break;
+    }
+
     setEntries([...entries,entry])
     //  await axios.post('http://127.0.0.1:5000/addentry', entry);
     const json = JSON.stringify(entry);
@@ -36,7 +51,7 @@ export default function UserComponent({showTab,entries,setEntries,selectedDate,s
   return (
     <>
         <TimesheetButtons selectedDate={selectedDate} setSelectedDate={setSelectedDate} />
-        <TableHeaderUser />
+        <TableHeaderUser showTab={showTab}/>
         {entries.map((entry,index) => {
           if (showTab == entry.status && entry.Name == (searchParams.get("user") || "Prem Bhajaj")){
             if (!selectedDate || selectedDate==entry.Date)

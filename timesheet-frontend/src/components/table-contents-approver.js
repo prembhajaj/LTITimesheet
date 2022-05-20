@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import RejectionReasonModal from './rejection-reason-modal'
 
-export default function TableContentsApprover({showTab,entry,id,approveEntry,rejectEntry}) {
+
+export default function TableContentsApprover({setRejectId,showTab,entry,id,approveEntry,rejectEntry}) {
+    
     return (
         <section>
             <div className="container-fluid">
@@ -10,8 +13,11 @@ export default function TableContentsApprover({showTab,entry,id,approveEntry,rej
                 <div className="col-md-2 col-sm-2 col-xs-1">
                     <div className="statustitle">{entry.Name}</div>
                 </div>
-                <div className="col-md-1 col-sm-2 col-xs-1">
+                <div className="col-md-2 col-sm-2 col-xs-1">
                     <div className="statustitle">{entry.Project}</div>
+                </div>
+                <div className="col-md-1 col-sm-2 col-xs-1">
+                    <div className="statustitle">{entry.CostCode}</div>
                 </div>
                 <div className="col-md-1 col-sm-2 col-xs-2">
                     <div className="projectnametitle">{entry.Activity}</div>
@@ -19,9 +25,6 @@ export default function TableContentsApprover({showTab,entry,id,approveEntry,rej
                     <div className="col-md-1 col-sm-2 col-xs-2">
                     <div className="completiontitle">{entry.Date}</div>
                 </div>
-                    <div className="col-md-2 col-sm-2 col-xs-2">
-                    <div className="detailstitle">{entry.StartTime}/{entry.EndTime}</div>
-                    </div>
                     <div className="col-md-1 col-sm-1 col-xs-1">
                     <div className="detailstitle">{entry.Duration}</div>
                     </div>
@@ -31,13 +34,20 @@ export default function TableContentsApprover({showTab,entry,id,approveEntry,rej
                     {showTab =="submitted" &&
                     <div className="col-md-2 col-sm-1 col-xs-1">
                         <button className="newmsgb btn" onClick={() => approveEntry(id)}>Approve</button>
-                        <button className="add-task-timesheet" onClick={() => rejectEntry(id)}>Reject</button>
+                        <button className="add-task-timesheet" data-toggle="modal" data-target="#rejectreason" onClick={() => setRejectId(id)}>Reject</button>
+                    </div>
+                    }
+
+                    {showTab =="rejected" &&
+                    <div className="col-md-2 col-sm-1 col-xs-1">
+                        <div className="detailstitle">{entry.comments}</div>
                     </div>
                     }
                 </div>
                 </div>
             </div>
-            </div>  
+            </div> 
+
         </section>
       )
 }

@@ -11,15 +11,15 @@ export default function TableContentsUser({showTab,entry,id,deleteEntry}) {
             <div className="col-md-2 col-sm-2 col-xs-1">
                 <div className="statustitle">{entry.Project}</div>
             </div>
+            <div className="col-md-2 col-sm-2 col-xs-1">
+                <div className="statustitle">{entry.CostCode}</div>
+            </div>
             <div className="col-md-2 col-sm-2 col-xs-2">
                 <div className="projectnametitle">{entry.Activity}</div>
             </div>
                 <div className="col-md-2 col-sm-2 col-xs-2">
                 <div className="completiontitle">{entry.Date}</div>
             </div>
-                <div className="col-md-2 col-sm-2 col-xs-2">
-                <div className="detailstitle">{entry.StartTime}/{entry.EndTime}</div>
-                </div>
                 <div className="col-md-1 col-sm-1 col-xs-1">
                 <div className="detailstitle">{entry.Duration}</div>
                 </div>
@@ -28,6 +28,9 @@ export default function TableContentsUser({showTab,entry,id,deleteEntry}) {
                 </div>
                 {showTab=="submitted" && <div className="col-md-1 col-sm-1 col-xs-1">
                 <button className="add-task-timesheet btn-sm" title='Delete Task' onClick={() => deleteEntry(id)}>X</button>
+                </div>}
+                {showTab=="rejected" && <div className="col-md-1 col-sm-1 col-xs-1">
+                <div className="detailstitle">{entry.comments}</div>
                 </div>}
             </div>
             </div>

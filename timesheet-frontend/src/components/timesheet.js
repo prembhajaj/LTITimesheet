@@ -13,11 +13,10 @@ export default function Timesheet() {
 
   const [entries,setEntries] = useState([{
     "Name":"PB",
-    "Project":"Hoist inance",
+    "Project":"Hoist finance",
+    "CostCode":"1001",
     "Activity":"Training",
     "Date":"2022-05-08",
-    "StartTime":"09:00",
-    "EndTime":"18:00",
     "Duration":"09:00",
     "SubActivity":"Completed Cloud Computing Certification",
     "status":"submitted"

@@ -10,10 +10,9 @@ CORS(app)
 entries = [{
     "Name":"Prem Bhajaj",
     "Project":"Hoist Finance",
+    "CostCode":"1001",
     "Activity":"Training",
     "Date":"2022-05-08",
-    "StartTime":"09:00",
-    "EndTime":"18:00",
     "Duration":"09:00",
     "SubActivity":"Completed Cloud Computing Certification",
     "status":"submitted"
@@ -42,6 +41,9 @@ def approveEntry(id):
 @app.route('/rejectentry/<id>',methods=['POST'])
 def rejectEntry(id):
     entries[int(id)]["status"] = "rejected"
+    entries[int(id)]["comments"] = request.get_json()["comments"]
+    print(request.get_json())
+
     return {"entries": entries}
 
 @app.route('/signin',methods=['POST'])
